@@ -1,0 +1,66 @@
+.timer-gauge {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.timer-svg {
+  filter: drop-shadow(0 0 6px rgba(0, 221, 255, 0.3));
+}
+
+.timer-track {
+  fill: none;
+  stroke: rgba(0, 221, 255, 0.3);
+  stroke-width: 1.5;
+}
+
+.timer-highlight {
+  fill: #00ff88;
+  opacity: 1;
+  stroke: none;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.8));
+}
+
+.hour-mark {
+  stroke: rgba(0, 221, 255, 0.5);
+  stroke-width: 1;
+}
+
+.timer-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-family: "Orbitron", "Arial", sans-serif;
+}
+
+.timer-minutes {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-shadow: 
+    2px 0 0 #00ddff,
+    -2px 0 0 #ff0080,
+    0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.timer-unit {
+  color: #ffffff;
+  opacity: 1;
+  font-size: 0.5rem;
+  font-weight: 600;
+  text-shadow: 
+    1px 0 0 #00ddff,
+    -1px 0 0 #ff0080,
+    0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .timer-gauge { width: 60px; height: 60px; }
+}
+
+@media (max-width: 480px) {
+  .timer-gauge { width: 52px; height: 52px; }
+}
