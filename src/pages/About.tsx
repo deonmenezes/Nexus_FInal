@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Zap, Target, Cpu, Recycle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
@@ -101,7 +102,7 @@ export const AboutContent = () => {
             <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-0 opacity-100'
               }`}>
               <h3 className="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8 text-center">
-                Lorem ipsum dolor sit amet.
+                0-90% fast charging in 20mins for Commercial EVs with in-house developed Liquid Immersion Technology
               </h3>
 
               <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
@@ -113,12 +114,12 @@ export const AboutContent = () => {
                       className={`group flex flex-col p-4 md:p-6 bg-white rounded-3xl border border-gray-200 shadow-2xl hover:shadow-3xl transition-all duration-700 transform min-h-[180px] sm:min-h-[200px] md:min-h-[280px] translate-x-0 opacity-100 hover:scale-105 hover:bg-gray-50 hover:-translate-y-1`}
                     >
                       {/* Icon */}
-                      <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                      <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
 
                       {/* Title */}
-                      <h4 className="text-center text-lg md:text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 leading-snug mb-2">
+                      <h4 className="text-center text-lg md:text-xl font-bold text-gray-800 group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-emerald-600 group-hover:bg-clip-text group-hover:text-transparent transition-colors duration-300 leading-snug mb-2">
                         <span className="font-semibold">{item.title}</span>
                       </h4>
 
@@ -128,11 +129,11 @@ export const AboutContent = () => {
                       </p>
 
                       {/* Arrow */}
-                      <div className="mt-4 flex justify-center">
-                        <div className="group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-indigo-500 p-2 rounded-lg transition-all duration-300">
-                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-blue-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                      <Link to="/technology" className="mt-4 flex justify-center">
+                        <div className="group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-emerald-600 p-2 rounded-lg transition-all duration-300">
+                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
                         </div>
-                      </div>
+                      </Link>
                     </div>
 
                   );
@@ -169,76 +170,53 @@ export const AboutContent = () => {
 
         {/* Mission & Vision Section */}
         <div className="max-w-6xl mx-auto mt-16 mb-16">
+          {/* Core Values */}
+          <div className="mb-12 bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
+            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent text-center mb-6">Our Core Values</h3>
+            <p className="text-gray-700 text-lg leading-relaxed mb-4 text-center">
+              We are proudly Built in Bharat, guided by the timeless principle of Vasudhaiva Kutumbakam — the world is one family.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed text-center">
+              Our values drive us to innovate with integrity, collaborate with compassion, and create solutions that serve humanity as a whole.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-lg border border-blue-100">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-lg border border-green-100">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-blue-800">Our Mission</h3>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-700 bg-clip-text text-transparent">Our Mission</h3>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To accelerate the global transition to sustainable energy by delivering cutting-edge battery technology solutions that power the future of mobility, commerce, and energy storage. We are committed to creating innovative, reliable, and environmentally responsible energy systems that enable businesses and communities to thrive in a net-zero world.
+                To energize humanity by developing cutting-edge, sustainable technologies — working for Bharat, and through Bharat, for the world.
               </p>
             </div>
 
             {/* Vision */}
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 shadow-lg border border-indigo-100">
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 shadow-lg border border-emerald-100">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-indigo-800">Our Vision</h3>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-700 bg-clip-text text-transparent">Our Vision</h3>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To become the world's leading architect of energy ecosystems, where every battery we create serves as a building block for a sustainable future. We envision a world where clean energy is accessible, reliable, and seamlessly integrated into every aspect of human activity, from urban mobility to industrial operations.
+                To create sustainable energy solutions for all, empowering communities and transforming lives through innovation and purpose.
               </p>
-            </div>
-          </div>
-
-          {/* Values */}
-          <div className="mt-12 bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-800 text-center mb-8">Our Core Values</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">Innovation</h4>
-                <p className="text-gray-600 text-sm">Pioneering breakthrough technologies that redefine energy storage capabilities</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">Reliability</h4>
-                <p className="text-gray-600 text-sm">Delivering consistent, dependable energy solutions that businesses can trust</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">Sustainability</h4>
-                <p className="text-gray-600 text-sm">Committed to environmental responsibility and creating a cleaner future</p>
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Product Ecosystem Section - now outside the quote card */}
-        <div className="mt-10 text-left max-w-6xl mx-auto">
+        {/* Product Ecosystem Section - Hidden as per requirements */}
+        <div className="mt-10 text-left max-w-6xl mx-auto hidden">
           <h3 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center">Nexus Energy Product Ecosystem</h3>
           <p className="text-base md:text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto font-normal">
             Nexus Energy's product ecosystem is engineered to accelerate the transition to a net-zero future, delivering next-generation battery-powered solutions across diverse sectors—including quick commerce, mobility, and scalable energy storage. Our integrated approach harnesses the power of our unique technological innovations:

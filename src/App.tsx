@@ -30,6 +30,8 @@ import Commercial from "./pages/solutions/Commercial";
 import Drones from "./pages/solutions/Drones";
 import EnergyStorage from "./pages/solutions/EnergyStorage";
 import Railways from "./pages/solutions/Railways";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +60,8 @@ const App = () => (
             <Route path="/application" element={<Application />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
             
             {/* Solution Routes */}
             <Route path="/solutions/web-development" element={<WebDevelopment />} />

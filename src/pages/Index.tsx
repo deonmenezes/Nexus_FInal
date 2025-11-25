@@ -1160,10 +1160,10 @@ const Index = () => {
   // Simple 2-image slider state
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Two images: b1.png and the existing train image
+  // Two images: b1.png and the train image
   const sliderImages = [
     "/images/b1.png",
-    "https://images.financialexpressdigital.com/2023/09/1-267.jpg"
+    "/images/fa53a6b5-e5c1-4fe6-beb7-85ee1b403e2d.jpg"
   ];
 
   // Auto-play slider with animation
@@ -1263,8 +1263,7 @@ const Index = () => {
                     Powering India's fastest trains with cutting-edge emergency backup systems.
                   </p>
                   <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                    Our advanced battery technology ensures uninterrupted power supply for critical safety systems, 
-                    communication networks, and passenger comfort in T-18 Vande Bharat Express trainsets.
+                    Our Advanced Lithium Iron Phosphate technology ensures uninterrupted power supply to Emergency loads including entire Ventilation System of all the Cars including Driver’s Cabin, Communication system (PIS & PA), Head light & Emergency Lights, Door Release, Trains Controls (Full Load), Fire Detection Systems, vacuum systems for the duration of 3 hours after loss of OHE power.
                   </p>
                   
                   {/* Key features */}
@@ -1282,17 +1281,29 @@ const Index = () => {
                 </div>
                 
                 {/* Enhanced Railway Stats */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div className="text-center lg:text-left group">
-                    <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-4 border border-orange-100 group-hover:shadow-lg transition-all duration-300">
-                      <div className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">10+</div>
-                      <div className="text-sm text-gray-600 font-medium">Trainsets Equipped</div>
+                    <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-4 sm:p-5 border border-orange-100 group-hover:shadow-lg transition-all duration-300">
+                      <div className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">11+</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium mt-1">years performance warranty</div>
                     </div>
                   </div>
                   <div className="text-center lg:text-left group">
-                    <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-4 border border-pink-100 group-hover:shadow-lg transition-all duration-300">
+                    <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-4 sm:p-5 border border-pink-100 group-hover:shadow-lg transition-all duration-300">
                       <div className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text">99.9%</div>
-                      <div className="text-sm text-gray-600 font-medium">Reliability Rate</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium mt-1">Reliability Rate</div>
+                    </div>
+                  </div>
+                  <div className="text-center lg:text-left group">
+                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-5 border border-green-100 group-hover:shadow-lg transition-all duration-300">
+                      <div className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text">4x</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium mt-1">long lasting than traditional battery systems</div>
+                    </div>
+                  </div>
+                  <div className="text-center lg:text-left group">
+                    <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-4 sm:p-5 border border-blue-100 group-hover:shadow-lg transition-all duration-300">
+                      <div className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">NO</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium mt-1">Maintenance required</div>
                     </div>
                   </div>
                 </div>
@@ -1308,7 +1319,7 @@ const Index = () => {
                     
                     {/* Animated Slider container */}
                     <div className="relative bg-white rounded-[2.5rem] p-3 shadow-2xl overflow-hidden">
-                      <div className="relative overflow-hidden rounded-[2rem] h-[400px] md:h-[400px]">
+                      <div className="relative overflow-hidden rounded-[2rem] h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
                         {/* Slider with crossfade animation */}
                         {sliderImages.map((image, index) => (
                           <div
@@ -1322,7 +1333,7 @@ const Index = () => {
                             <img
                               src={image}
                               alt={`Energy Innovation ${index + 1}`}
-                              className="w-full h-full object-fill transition-transform duration-1000"
+                              className="w-full h-full object-cover transition-transform duration-1000"
                               loading="lazy"
                               style={{
                                 filter: index === currentSlide ? 'brightness(1)' : 'brightness(0.8)',

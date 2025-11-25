@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { GlowCard } from "./GlowCard";
 
 const InnovationSection: React.FC = () => {
@@ -21,82 +22,71 @@ const InnovationSection: React.FC = () => {
     {
       icon: "🔄",
       title: "Ultra-Fast Charging",
-      description: "Proprietary Liquid Immersion Technology enables 0-80% charge in under 15 minutes."
+      description: "0-90% fast charging in 20mins for Commercial EVs with in-house developed Liquid Immersion Technology"
     }
   ];
 
   return (
-    <section className="relative z-10 bg-white py-8 md:py-12">
+    <section className="relative z-10 bg-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-stretch">
-          {/* Left visual panel */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+          {/* Left visual panel - Battery Module */}
           <div className="lg:col-span-6 flex flex-col">
-            <div className="relative flex-1 mt-16">
-
-              <GlowCard
-                glowColor="blue"
-                customSize={true}
-                className="relative  shadow-[0_20px_40px_rgba(15,23,42,0.08)] border border-slate-100 bg-white p-2 h-auto transition-all duration-300 hover:shadow-[0_25px_50px_rgba(59,130,246,0.15)] hover:scale-105 hover:border-blue-200"
-              >
-                {/* Battery Image */}
-                <div className="flex items-center justify-center group">
-                    <video 
-                      src="./images/video-vmake.mp4" 
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline
-                      className="w-full h-[620px] object-cover transition-all duration-300 group-hover:brightness-110 group-hover:drop-shadow-lg rounded-lg"
-                    />
+            <div className="relative w-full">
+              <div className="bg-white rounded-3xl p-4 md:p-6 shadow-2xl border-2 border-gray-100 overflow-hidden">
+                {/* Battery Image/Video */}
+                <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl overflow-hidden">
+                  <video 
+                    src="./images/video-vmake.mp4" 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full h-[500px] md:h-[600px] object-cover transition-all duration-300 hover:scale-105"
+                  />
+                  {/* Circuit board pattern overlay */}
+                  <div className="absolute inset-0 opacity-20 pointer-events-none">
+                    <div className="absolute inset-0" style={{
+                      backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
+                      backgroundSize: '40px 40px'
+                    }}></div>
+                  </div>
                 </div>
-              </GlowCard>
+              </div>
             </div>
           </div>
 
           {/* Right content and breakthrough cards */}
-          <div className="lg:col-span-6">
-            <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-slate-900 leading-tight mb-6 text-left">
-                Lorem ipsum dolor sit amet consectetur. 
-              
-              </h2>
-            
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+          <div className="lg:col-span-6 flex flex-col">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full">
               {breakthroughs.map((breakthrough, idx) => (
-                <GlowCard
-                  key={idx}
-                  glowColor="blue"
-                  customSize={true}
-                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 cursor-pointer"
-                >
-                  <div className="flex flex-col h-full">
+                <Link key={idx} to="/technology" className="block h-full">
+                  <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 cursor-pointer border-2 border-gray-100 hover:border-green-200 h-full flex flex-col">
                     {/* Icon - Top Center */}
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white text-xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      {breakthrough.icon}
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <span className="text-2xl">{breakthrough.icon}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors duration-300 text-center">
+                    <h3 className="text-base md:text-lg font-semibold text-slate-900 mb-3 group-hover:text-green-700 transition-colors duration-300 text-center leading-tight">
                       {breakthrough.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow text-center">
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow text-center">
                       {breakthrough.description}
                     </p>
 
                     {/* Arrow */}
-                    <div className="flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex justify-center mt-auto">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300 shadow-md">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
                     </div>
                   </div>
-                </GlowCard>
+                </Link>
               ))}
             </div>
           </div>

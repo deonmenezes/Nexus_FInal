@@ -9,23 +9,23 @@ const services = [
     title: "Quick Commerce",
     description: "Ultra-fast charging solutions for quick commerce vehicles",
     icon: Truck,
-    image: Images.tempo,
+    image: "/quick commerce.png",
     features: [
-      "Rapid high charging compact form factor",
-      "Suitable for diverse range of commercial fleet vehicles 24/7 charge",
-      "Heavy duty connectivity with a single charge & function",
+      "Ultra-fast charging, compact form-factors",
+      "Rugged design for high throughput and reliability in last-mile delivery and logistics fleets",
+      "Plug-and-play compatibility with e-cargo Vehicles & Scooters",
     ],
   },
   {
-    title: "Mobility Solutions",
+    title: "Material handling Equipments",
     description:
-      "Efficient battery technology for electric mobility transformation and premium bus charging solutions",
+      "Robust battery solutions for forklifts, stackers, and material handling equipment",
     icon: Bike,
     image: Images.eMobility,
     features: [
-      "Delivers High-range vehicle with easy battery swapping",
-      "Solutions city two scooters",
-      "Off road movement",
+      "Heavy-duty design for industrial applications",
+      "Quick swap capability for continuous operations",
+      "IoT monitoring for fleet management",
     ],
   },
   {
@@ -33,11 +33,11 @@ const services = [
     description:
       "Industrial battery utility-operating renewable integration and powerSoft batteries & backup applications",
     icon: Building2,
-    image: Images.rEnergy,
+    image: "/grid scale.png",
     features: [
-      "Heavy duty bulk load capabilities",
-      "Fast charge specifications",
-      "Smart energy moving framework developed assistants for large utility",
+      "Modular battery racks supporting renewable integration",
+      "Smart fleet management powered by AI for predictive maintenance",
+      "Flexible configurations: from microgrid installations to large utility-scale storage",
     ],
   },
   {
@@ -45,10 +45,11 @@ const services = [
     description:
       "Self-contained and efficient solutions for homes and businesses with comprehensive products and functionality",
     icon: Home,
-    image: Images.forkLifts,
+    image: "/residential and commerical.png",
     features: [
-      "Intelligent energy use lead for specific environment",
-      "Step working capabilities during power outages",
+      "Smart monitoring and energy optimization",
+      "Backup power during outages",
+      "Solar integration capabilities",
     ],
   },
 ];
@@ -59,7 +60,7 @@ const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-blue-600 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-6 leading-tight">
             Our Services
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -77,12 +78,14 @@ const ServicesSection: React.FC = () => {
             >
               {/* Image Side */}
               <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-52 md:h-64 object-contain bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                  loading="lazy"
-                />
+                <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-64 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
               </div>
 
               {/* Text Card Side */}
@@ -93,11 +96,11 @@ const ServicesSection: React.FC = () => {
                   className="h-full bg-white border border-gray-100 shadow-sm p-4 md:p-5"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white font-semibold text-sm">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-sm">
                       {index + 1}
                     </div>
-                    <service.icon className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
-                    <h3 className="text-base md:text-lg font-semibold text-blue-600">
+                    <service.icon className="h-5 w-5 md:h-6 md:w-6 bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent" />
+                    <h3 className="text-base md:text-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
                       {service.title}
                     </h3>
                   </div>
@@ -109,7 +112,7 @@ const ServicesSection: React.FC = () => {
                   <div className="space-y-1.5">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-2">
-                        <div className="mt-1.5 w-1 h-1 rounded-full bg-blue-600"></div>
+                        <div className="mt-1.5 w-1 h-1 rounded-full bg-gradient-to-r from-green-500 to-emerald-600"></div>
                         <p className="text-gray-700 text-xs md:text-sm">{feature}</p>
                       </div>
                     ))}

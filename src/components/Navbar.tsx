@@ -7,6 +7,7 @@ import { HoverImageEffect } from "@/components/custom/HoverImageEffect";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet-async";
 import { div } from "three/src/nodes/TSL.js";
+import { Logo } from "@/components/Logo";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -96,9 +97,10 @@ export const Navbar = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
-  // Reset mobile submenu when location changes
+  // Reset mobile submenu and close mobile menu when location changes
   useEffect(() => {
     setMobileSubMenuOpen(false);
+    setIsMobileMenuOpen(false);
     setIsDropdownOpen(false);
     setHoveredCategory(null);
     setExpandedCategories({});
@@ -261,38 +263,10 @@ export const Navbar = ({
           role="navigation"
           aria-label="Main Navigation"
         >
-          <Link
-            to="/"
-            className="flex items-center gap-3"
-            aria-label="Nexus Energy Homepage"
-          >
-            {/* Mobile view: Show Nexus Energy logo only */}
-            {/* <img
-              src="/nexuslogo.png"
-              alt="Nexus Energy Logo"
-              className="h-10 md:hidden"
-              width="40"
-              height="40"
-            /> */}
-            {/* Desktop view: Show Nexus Energy logo and text */}
-            <span className="hidden md:flex items-center gap-3">
-              {/* <img
-                src="/nexuslogo.png"
-                alt="Nexus Energy Logo"
-                className="h-8"
-                width="32"
-                height="32"
-              /> */}
-              <span
-                className={cn(
-                  "text-xl font-semibold transition-colors duration-300",
-                  scrolled ? "text-gray-900" : location.pathname === '/' ? "text-white" : "text-gray-900"
-                )}
-              >
-                Nexus Energy
-              </span>
-            </span>
-          </Link>
+          <Logo 
+            size="md" 
+            variant={scrolled || location.pathname !== '/' ? 'dark' : 'light'}
+          />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 xl:gap-10" role="menubar">
@@ -496,8 +470,8 @@ export const Navbar = ({
               className={cn(
                 "transition-all duration-300 px-6 py-2 text-sm font-medium rounded-full",
                 scrolled
-                  ? "bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white"
-                  : "bg-gradient-to-r from-green-500/90 to-blue-600/90 hover:from-green-600 hover:to-blue-700 text-white backdrop-blur-sm"
+                  ? "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white"
+                  : "bg-gradient-to-r from-green-500/90 to-emerald-600/90 hover:from-green-600 hover:to-emerald-700 text-white backdrop-blur-sm"
               )}
               aria-label="Get in touch with us"
             >
@@ -506,7 +480,7 @@ export const Navbar = ({
           </div>
 
           {/* Mobile Navigation */}
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -528,19 +502,18 @@ export const Navbar = ({
                 className="flex flex-col h-full pt-6"
                 aria-label="Mobile Navigation"
               >
-                <Link
-                  to="/"
-                  className="flex items-center gap-3 pb-6 border-b border-gray-200"
-                  aria-label="Nexus Energy Homepage"
-                >
-                
-                  <span className="text-lg font-semibold text-gray-900">Nexus Energy</span>
-                </Link>
+                <div className="pb-6 border-b border-gray-200">
+                  <Logo size="sm" />
+                </div>
                 <div className="flex flex-col gap-1 py-6" role="menu">
                   {navItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.path}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
                       className={cn(
                         "text-base py-3 px-4 rounded-md transition-colors",
                         location.pathname === item.path
@@ -583,6 +556,10 @@ export const Navbar = ({
                             <div className="flex flex-col">
                               <Link
                                 to={category.path}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  window.scrollTo({ top: 0, behavior: "smooth" });
+                                }}
                                 className={cn(
                                   "block text-sm py-2 px-3 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-blue-300 font-medium",
                                   location.pathname === category.path
@@ -626,6 +603,17 @@ export const Navbar = ({
                                   <Link
                                     key={subcategory.name}
                                     to={subcategory.path}
+                                    onClick={(e) => {
+                                      const [base, hash] = subcategory.path.split('#');
+                                      if (location.pathname === base && hash) {
+                                        e.preventDefault();
+                                        const el = document.getElementById(hash);
+                                        if (el) {
+                                          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                        }
+                                      }
+                                      setIsMobileMenuOpen(false);
+                                    }}
                                     className={cn(
                                       "block text-xs py-1.5 px-2 rounded-md transition-all duration-200 border-l-2 border-transparent hover:border-blue-300",
                                       location.pathname === subcategory.path
@@ -647,6 +635,10 @@ export const Navbar = ({
                   {/* Technology */}
                   <Link
                     to="/technology"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     className={cn(
                       "text-base py-3 px-4 rounded-md transition-colors",
                       location.pathname === "/technology"
@@ -664,10 +656,18 @@ export const Navbar = ({
                 <div className="mt-auto pb-6">
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 text-sm font-medium rounded-full transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 text-sm font-medium rounded-full transition-all duration-300"
                     aria-label="Get in touch with us"
                   >
-                    <Link to="/contact">Get Contact</Link>
+                    <Link 
+                      to="/contact"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                    >
+                      Get Contact
+                    </Link>
                   </Button>
                 </div>
               </nav>

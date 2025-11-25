@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Images } from "../constants";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
@@ -10,20 +11,23 @@ const services = [
   {
     id: 'bess',
     title: 'Energy Storage on Power Generation',
-    description: 'Nexus Energy’s energy storage systems provide energy storage and output management in power generation. The electrochemical technology and renewable energy power generation technology form a joint system. Through the high-level consistency of cells and the powerful computing of BMS, Nexus Energy enables the power generation to restore a stable power grid, optimize the power output curve, reduce solar and wind curtailment, provide system inertia and the functions of frequency and peak modulation, increase the proportion of renewable energy in total power generation, and optimize the energy structure.',
+    description: "Nexus Energy's energy storage systems provide energy storage and output management in power generation. The electrochemical technology and renewable energy power generation technology form a joint system. Through the high-level consistency of cells and the powerful computing of BMS, Nexus Energy enables the power generation to restore a stable power grid, optimize the power output curve, reduce solar and wind curtailment, provide system inertia and the functions of frequency and peak modulation, increase the proportion of renewable energy in total power generation, and optimize the energy structure.",
     image: '/images/s8.png',
+    link: '/solutions'
   },
   {
     id: 'ups',
     title: 'Energy Storage on Power Transmission and Distribution',
-    description: 'Nexus Energy’s energy storage systems provide smart load management for power transmission and distribution, and modulate frequency and peak in time according to power grid loads. The Nexus Energy electrochemical energy storage system has the functions of capacity increasing and  expansion, backup power supply, etc. It can adopt more renewable energy in power transmission and distribution in order to ensure the safe, stable, efficient and low-cost operation of the power grid.',
+    description: "Nexus Energy's energy storage systems provide smart load management for power transmission and distribution, and modulate frequency and peak in time according to power grid loads. The Nexus Energy electrochemical energy storage system has the functions of capacity increasing and  expansion, backup power supply, etc. It can adopt more renewable energy in power transmission and distribution in order to ensure the safe, stable, efficient and low-cost operation of the power grid.",
     image: '/images/s9.png',
+    link: '/solutions'
   },
   {
     id: 'ups',
     title: 'Energy Storage on Power Consumption',
-    description: 'Nexus Energy’s energy storage systems provide users with a  peak-valley electricity price arbitrage mode and stable power quality management. Nexus Energy’s electrochemical energy storage products have been successfully applied in large-scale industrial, commercial and residential areas, and been expanded to emerging scenarios such as base stations, UPS backup power, off-grid and island/isolate systems, intelligent charging stations for optical storage charging and testing, etc. Such applications help regions that have a lack of power grids to have access to electricity, reduce electricity costs, ensure a  stable power network, and achieve maximum social and economic benefits by using renewable energy to its greatest extent.',
+    description: "Nexus Energy's energy storage systems provide users with a  peak-valley electricity price arbitrage mode and stable power quality management. Nexus Energy's electrochemical energy storage products have been successfully applied in large-scale industrial, commercial and residential areas, and been expanded to emerging scenarios such as base stations, UPS backup power, off-grid and island/isolate systems, intelligent charging stations for optical storage charging and testing, etc. Such applications help regions that have a lack of power grids to have access to electricity, reduce electricity costs, ensure a  stable power network, and achieve maximum social and economic benefits by using renewable energy to its greatest extent.",
     image: '/images/s10.png',
+    link: '/solutions'
   }, {
     title: "Road Passenger Transport Solutions",
     description: "Focusing on the high-frequency and high-stability requirements of road passenger transport, Nexus Energy provides multi-scenario solutions that are safe, reliable, durable, and widely used in various urban public transport scenarios, passenger line, tourism passenger transport, commuter, etc.",
@@ -52,20 +56,13 @@ const services = [
     title: "Construction Machinery",
     description: "The battery product solution provided by Nexus Energy for the field of construction machinery are widely adapted to special vehicles such as forklifts and slag trucks. It's easy to adapt to specific working conditions and create a comfortable and safe working environment.",
     image: "/images/s5.png",
-    link: "/solutions/commercial/construction-machinery"
+    link: "/solutions"
   },
-  {
-    title: "Two-wheeled Vehicle Solutions",
-    description: "Nexus Energy offers green, intelligent and safe battery solutions for two-wheeled vehicles which can be applied to multiple scenarios such as commuting, food delivery, express delivery, etc. The rechargeable and replaceable batteries make your travel experience easy and seamless.",
-    image: "/images/s6.png",
-    link: "/solutions/commercial/two-wheeled"
-  },
-
   {
     title: "Special Vehicle Solutions",
     description: "Nexus Energy provides customized product solutions for special vehicles which can be easily adapted to specific working conditions, thereby improving economic benefits, reducing environmental pollution and creating a comfortable and safe working environment.",
     image: "/images/s7.png",
-    link: "/solutions/commercial/special-vehicle"
+    link: "/solutions"
   }
 ];
 
@@ -209,42 +206,47 @@ export const ServicesContent = () => {
                     className="flex-shrink-0"
                     style={{ width: `${100 / slidesToShow}%` }}
                   >
-                    <div
-                      className="group cursor-pointer h-full"
+                    <Link
+                      to={service.link || "/solutions"}
+                      className="block h-full"
                       onMouseEnter={() => setHoveredCard(index)}
                       onMouseLeave={() => setHoveredCard(null)}
                     >
-                      <div className={`relative bg-gradient-to-br ${getGradientStyle(service.title)} backdrop-blur-sm rounded-2xl p-1 h-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20`}>
-                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 h-full flex flex-col">
-                          {/* Image Section */}
-                          <div className="relative h-48 md:h-52 overflow-hidden rounded-xl mb-6">
-                            <img
-                              src={service.image}
-                              alt={service.title}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                              loading="lazy"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                      <div className={`group cursor-pointer h-full`}>
+                        <div className={`relative bg-gradient-to-br ${getGradientStyle(service.title)} backdrop-blur-sm rounded-2xl p-1 h-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20`}>
+                          <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 h-full flex flex-col">
+                            {/* Image Section */}
+                            <div className="relative h-48 md:h-52 overflow-hidden rounded-xl mb-6">
+                              <img
+                                src={service.image}
+                                alt={service.title}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-                            {/* Stats Badge */}
-                            <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full text-sm font-bold text-gray-800 shadow-lg border border-white/20">
-                              {service.stats}
+                              {/* Stats Badge */}
+                              {service.stats && (
+                                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full text-sm font-bold text-gray-800 shadow-lg border border-white/20">
+                                  {service.stats}
+                                </div>
+                              )}
+
+
                             </div>
 
-
-                          </div>
-
-                          {/* Content Section */}
-                          <div className="flex flex-col flex-grow">
-                            <h3 className="text-xl md:text-2xl mb-0 font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
-                              {service.title}
-                            </h3>
+                            {/* Content Section */}
+                            <div className="flex flex-col flex-grow">
+                              <h3 className="text-xl md:text-2xl mb-0 font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+                                {service.title}
+                              </h3>
 
 
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 );
               })}
