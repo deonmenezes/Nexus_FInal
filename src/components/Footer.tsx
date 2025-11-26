@@ -7,6 +7,7 @@ import {
   Info,
   Briefcase,
   MessageSquare,
+  Linkedin,
 } from "lucide-react";
 import { Logo } from "./Logo";
 
@@ -96,20 +97,20 @@ export const Footer = () => {
               <div className="mt-4">
                 <p className="text-gray-700 text-sm mb-1">Email : <a href="mailto:sales@nexusenergy.in" className="text-gray-700 hover:text-green-600 transition-colors duration-300">sales@nexusenergy.in</a></p>
                 <p className="text-gray-700 text-sm mb-1">Contact : <a href="tel:+916280602341" className="text-gray-700 hover:text-green-600 transition-colors duration-300">+91 6280 602 341</a></p>
-                <a href="tel:+919650661636" className="text-gray-700 hover:text-green-600 transition-colors duration-300 text-sm">+91 9650661636</a>
+                <a href="tel:+919650661636" className="text-gray-700 hover:text-green-600 transition-colors duration-300 text-sm block mb-3">+91 9650661636</a>
+                <a 
+                  href="https://www.linkedin.com/company/nexus-energy-solutions-pvt-ltd/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 group"
+                  aria-label="Visit our LinkedIn page"
+                >
+                  <div className="flex items-center justify-center w-8 h-8 bg-gray-600 group-hover:bg-green-600 transition-colors duration-300 rounded-sm">
+                    <Linkedin className="w-4 h-4 text-white fill-white" strokeWidth={0} fill="currentColor" />
+                  </div>
+                  <span className="text-gray-700 group-hover:text-green-600 transition-colors duration-300 text-sm">Linked in</span>
+                </a>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Green Gradient Bar with Phone Numbers */}
-        <div className="mt-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg p-4 text-center">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <Phone className="w-5 h-5 text-white" />
-            <div className="flex flex-col md:flex-row items-center gap-4">
-              <a href="tel:+916280602341" className="text-white font-semibold hover:underline">+91 6280 602 341</a>
-              <span className="hidden md:inline text-white/70">|</span>
-              <a href="tel:+919650661636" className="text-white font-semibold hover:underline">+91 9650661636</a>
             </div>
           </div>
         </div>

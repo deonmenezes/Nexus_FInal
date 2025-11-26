@@ -95,7 +95,13 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        {/* WhatsApp Support Banner */}
+      </div>
+      {/* Main Content: Contact Form */}
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <ContactForm />
+      </div>
+      {/* WhatsApp Support Banner */}
+      <div className="max-w-7xl mx-auto px-6 pb-12">
         <div className="relative overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
@@ -119,10 +125,6 @@ const Contact = () => {
             </a>
           </div>
         </div>
-      </div>
-      {/* Main Content: Contact Form */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <ContactForm />
       </div>
       <Footer />
     </div>

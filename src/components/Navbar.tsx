@@ -14,7 +14,6 @@ const SITE_URL = "https://nexusenergy.com";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
 ];
 
 const solutionsStructure = [
@@ -277,22 +276,18 @@ export const Navbar = ({
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-blue-600 relative py-2 group",
+                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group",
+                  scrolled || location.pathname !== '/'
+                    ? "text-gray-700 hover:text-blue-600"
+                    : "text-white hover:text-blue-200",
                   location.pathname === item.path
-                    ? scrolled
-                      ? "text-blue-600 font-semibold"
-                      : "text-blue-400 font-semibold"
-                    : scrolled
-                      ? "text-gray-900 hover:text-blue-600"
-                      : location.pathname === '/'
-                        ? "text-gray-100 hover:text-blue-300"
-                        : "text-gray-900 hover:text-blue-600"
+                    ? "font-semibold"
+                    : ""
                 )}
                 role="menuitem"
                 aria-current={location.pathname === item.path ? "page" : undefined}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
 
@@ -310,16 +305,13 @@ export const Navbar = ({
             >
               <button
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-blue-600 relative py-2 flex items-center gap-1",
+                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full flex items-center gap-1",
+                  scrolled || location.pathname !== '/'
+                    ? "text-gray-700 hover:text-blue-600"
+                    : "text-white hover:text-blue-200",
                   location.pathname.startsWith('/solutions')
-                    ? scrolled
-                      ? "text-blue-600 font-semibold"
-                      : "text-blue-400 font-semibold"
-                    : scrolled
-                      ? "text-gray-900 hover:text-blue-600"
-                      : location.pathname === '/'
-                        ? "text-gray-100 hover:text-blue-300"
-                        : "text-gray-900 hover:text-blue-600"
+                    ? "font-semibold"
+                    : ""
                 )}
               >
                 Solutions
@@ -329,7 +321,6 @@ export const Navbar = ({
                     isDropdownOpen ? "rotate-180" : ""
                   )}
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
 
               {/* Dropdown Menu - CATL Style */}
@@ -447,34 +438,25 @@ export const Navbar = ({
             <Link
               to="/technology"
               className={cn(
-                "text-sm font-medium transition-all duration-300 hover:text-blue-600 relative py-2 group",
+                "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group",
+                scrolled || location.pathname !== '/'
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white hover:text-blue-200",
                 location.pathname === "/technology"
-                  ? scrolled
-                    ? "text-blue-600 font-semibold"
-                    : "text-blue-400 font-semibold"
-                  : scrolled
-                    ? "text-gray-900 hover:text-blue-600"
-                    : location.pathname === '/'
-                      ? "text-gray-100 hover:text-blue-300"
-                      : "text-gray-900 hover:text-blue-600"
+                  ? "font-semibold"
+                  : ""
               )}
               role="menuitem"
               aria-current={location.pathname === "/technology" ? "page" : undefined}
             >
               Technology
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
             <Button
               asChild
-              className={cn(
-                "transition-all duration-300 px-6 py-2 text-sm font-medium rounded-full",
-                scrolled
-                  ? "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white"
-                  : "bg-gradient-to-r from-green-500/90 to-emerald-600/90 hover:from-green-600 hover:to-emerald-700 text-white backdrop-blur-sm"
-              )}
+              className="transition-all duration-300 px-6 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white shadow-md hover:shadow-lg"
               aria-label="Get in touch with us"
             >
               <Link to="/contact">Get Contact</Link>
@@ -487,15 +469,19 @@ export const Navbar = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className={cn(
-                  "lg:hidden duration-300 p-2 w-full justify-between flex items-center gap-2",
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-                    : "text-white hover:text-gray-200 hover:bg-white/10"
-                )}
+                className="lg:hidden duration-300 p-2 hover:bg-gray-100 relative"
                 aria-label="Open navigation menu"
               >
-                <h1 className=" font-bold text-xl">Nexus Energy</h1><Menu className="h-5 w-5" aria-hidden="true" /> 
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="menuGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="50%" stopColor="#06b6d4" />
+                      <stop offset="100%" stopColor="#3b82f6" />
+                    </linearGradient>
+                  </defs>
+                  <path stroke="url(#menuGradient)" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
@@ -517,10 +503,10 @@ export const Navbar = ({
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                       className={cn(
-                        "text-base py-3 px-4 rounded-md transition-colors",
+                        "text-base py-3 px-4 rounded-full transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-gray-50",
                         location.pathname === item.path
-                          ? "bg-blue-50 text-blue-600 font-medium"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          ? "font-semibold text-blue-600 bg-blue-50"
+                          : ""
                       )}
                       role="menuitem"
                       aria-current={
@@ -536,10 +522,10 @@ export const Navbar = ({
                     <button
                       onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
                       className={cn(
-                        "w-full text-left text-base py-3 px-4 rounded-md transition-colors flex items-center justify-between",
+                        "w-full text-left text-base py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-between text-gray-700 hover:text-blue-600 hover:bg-gray-50",
                         location.pathname.startsWith('/solutions')
-                          ? "bg-blue-50 text-blue-600 font-medium"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          ? "font-semibold text-blue-600 bg-blue-50"
+                          : ""
                       )}
                     >
                       <span>Solutions</span>
@@ -642,10 +628,10 @@ export const Navbar = ({
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                     className={cn(
-                      "text-base py-3 px-4 rounded-md transition-colors",
+                      "text-base py-3 px-4 rounded-full transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-gray-50",
                       location.pathname === "/technology"
-                        ? "bg-blue-50 text-blue-600 font-medium"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                        ? "font-semibold text-blue-600 bg-blue-50"
+                        : ""
                     )}
                     role="menuitem"
                     aria-current={
@@ -658,7 +644,7 @@ export const Navbar = ({
                 <div className="mt-auto pb-6">
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 text-sm font-medium rounded-full transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
                     aria-label="Get in touch with us"
                   >
                     <Link 

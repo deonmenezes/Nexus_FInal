@@ -32,25 +32,25 @@ const services = [
     title: "Road Passenger Transport Solutions",
     description: "Focusing on the high-frequency and high-stability requirements of road passenger transport, Nexus Energy provides multi-scenario solutions that are safe, reliable, durable, and widely used in various urban public transport scenarios, passenger line, tourism passenger transport, commuter, etc.",
     image: "/images/s1.png",
-    link: "/solutions/commercial/passenger-transport"
+    link: "/solutions"
   },
   {
     title: "Urban Delivery Solutions",
     description: "Nexus Energy's traction batteries are suitable for light trucks, mini buses, and minivans, and are widely used in express delivery, supermarket delivery, fresh food delivery and other scenarios. Nexus Energy provides customers with safe, reliable and comprehensive battery solutions.",
     image: "/images/s2.png",
-    link: "/solutions/commercial/urban-delivery"
+    link: "/solutions"
   },
   {
     title: "Heavy-duty Transport Solutions",
     description: "Nexus Energy provides strong and clean power to heavy-duty vehicles for meeting the working conditions of mining areas, ports, short-haul transportation in urban areas and construction sites, to satisfy the requirements of industrialization and transport electrification.",
     image: "/images/s3.png",
-    link: "/solutions/commercial/heavy-duty"
+    link: "/solutions"
   },
   {
     title: "Urban Street Cleaning Solutions",
     description: "Nexus Energy provides customized solutions that meet the demands of various street cleaning vehicles. Nexus Energy's batteries feature great safety, long life and strong environmental adaptability, covering a variety of vehicle types including electric washing vehicles, electric washing and sweeping vehicles, electric garbage trucks.",
     image: "/images/s4.png",
-    link: "/solutions/commercial/street-cleaning"
+    link: "/solutions"
   },
   {
     title: "Construction Machinery",

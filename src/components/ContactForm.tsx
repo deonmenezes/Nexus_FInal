@@ -207,10 +207,10 @@ export const ContactForm = () => {
         {TABS.map((tab, idx) => (
           <button
             key={tab.value}
-            className={`flex-1 h-[80px] text-lg font-semibold transition-all duration-200 focus:outline-none border-none ${
+            className={`flex-1 h-[80px] text-lg font-semibold transition-all duration-300 focus:outline-none border-none ${
               activeTab === tab.value
-                ? 'bg-[#0028AA] text-white border-b-4 border-[#0028AA]'
-                : 'bg-[#001e5a] text-white/80 border-b-4 border-transparent hover:bg-[#0028AA] hover:text-white'
+                ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg'
+                : 'bg-gradient-to-r from-green-400/70 to-blue-500/70 text-white/90 hover:from-green-500 hover:to-blue-600 hover:text-white hover:shadow-md'
             } ${idx === 0 ? 'rounded-tl-xl' : ''} ${idx === TABS.length - 1 ? 'rounded-tr-xl' : ''}`}
             onClick={() => setActiveTab(tab.value)}
             type="button"
@@ -303,7 +303,7 @@ export const ContactForm = () => {
         </div>
         <div className="flex items-center gap-2">
           <input type="checkbox" id="agree" checked={agree} onChange={e => setAgree(e.target.checked)} />
-          <label htmlFor="agree" className="text-sm">I agree to comply with <a href="/privacy" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a></label>
+          <label htmlFor="agree" className="text-sm">I agree to comply with <a href="/privacy-policy" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a></label>
         </div>
         {error && <div className="text-red-600 text-sm mb-2">{error}</div>}
         <Button type="submit" disabled={isSubmitting} className="w-fit bg-[#001E5A] hover:bg-primary/90 text-white py-6 text-lg font-medium">
