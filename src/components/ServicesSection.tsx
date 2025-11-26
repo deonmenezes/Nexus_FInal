@@ -21,7 +21,7 @@ const services = [
     description:
       "Robust battery solutions for forklifts, stackers, and material handling equipment",
     icon: Bike,
-    image: "/images/bt.jpg",
+    image: "/images/mh.png",
     features: [
       "Heavy-duty design for industrial applications",
       "Quick swap capability for continuous operations",
@@ -45,7 +45,7 @@ const services = [
     description:
       "Self-contained and efficient solutions for homes and businesses with comprehensive products and functionality",
     icon: Home,
-    image: "/residential and commerical.png",
+    image: "/images/bb.png",
     features: [
       "Smart monitoring and energy optimization",
       "Backup power during outages",
@@ -79,12 +79,12 @@ const ServicesSection: React.FC = () => {
               {/* Image Side */}
               <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                 <div className={`relative w-full h-64 sm:h-72 md:h-80 lg:h-64 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden ${
-                  index === 1 || index === 2 ? "" : "flex items-center justify-center p-4"
+                  index === 2 ? "" : "flex items-center justify-center p-4"
                 }`}>
                   <img
                     src={service.image}
                     alt={service.title}
-                    className={`w-full h-full ${index === 1 || index === 2 ? "object-cover" : "object-contain"}`}
+                    className={`w-full h-full ${index === 2 ? "object-cover" : "object-contain"}`}
                     loading="lazy"
                   />
                 </div>
