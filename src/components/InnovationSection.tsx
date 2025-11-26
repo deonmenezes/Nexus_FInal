@@ -1,26 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GlowCard } from "./GlowCard";
+import { Zap, RefreshCw } from "lucide-react";
 
 const InnovationSection: React.FC = () => {
   const breakthroughs = [
     {
-      icon: "⚡",
+      icon: Zap,
+      type: 'component' as const,
       title: "Active Thermal Management",
       description: "Precision control of battery temperatures ensures optimal performance and longevity across all operating conditions."
     },
     {
       icon: "◎",
+      type: 'emoji' as const,
       title: "AI-Powered Battery Management System (BMS)",
       description: "Real-time data analytics optimize every cell's performance, predicting failures before they occur."
     },
     {
       icon: "⊞",
+      type: 'emoji' as const,
       title: "Life Extension Algorithm",
       description: "Smart software predicts and mitigates cell degradation, extending battery life by up to 40%."
     },
     {
-      icon: "🔄",
+      icon: RefreshCw,
+      type: 'component' as const,
       title: "Ultra-Fast Charging",
       description: "0-90% fast charging in 20mins for Commercial EVs with in-house developed Liquid Immersion Technology"
     }
@@ -59,12 +64,17 @@ const InnovationSection: React.FC = () => {
           {/* Right content and breakthrough cards */}
           <div className="lg:col-span-6 flex flex-col">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full">
-              {breakthroughs.map((breakthrough, idx) => (
+              {breakthroughs.map((breakthrough, idx) => {
+                return (
                 <Link key={idx} to="/technology" className="block h-full">
                   <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 cursor-pointer border-2 border-gray-100 hover:border-green-200 h-full flex flex-col">
                     {/* Icon - Top Center */}
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <span className="text-2xl">{breakthrough.icon}</span>
+                    <div className="flex items-center justify-center w-14 h-14 mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      {breakthrough.type === 'component' ? (
+                        <breakthrough.icon className="w-10 h-10 text-green-600 group-hover:text-green-700 transition-colors duration-300" />
+                      ) : (
+                        <span className="text-4xl text-green-600 group-hover:text-green-700 transition-colors duration-300">{breakthrough.icon}</span>
+                      )}
                     </div>
 
                     {/* Title */}
@@ -87,7 +97,7 @@ const InnovationSection: React.FC = () => {
                     </div>
                   </div>
                 </Link>
-              ))}
+              )})}
             </div>
           </div>
         </div>

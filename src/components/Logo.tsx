@@ -26,65 +26,15 @@ export const Logo: React.FC<LogoProps> = ({
     <Link to="/" className={`flex items-center gap-3 ${className}`}>
       {/* Circular Emblem with Segmented Arcs */}
       <div className={`relative ${currentSize.circle} flex items-center justify-center`}>
-        <svg 
-          viewBox="0 0 100 100" 
-          className="absolute inset-0 w-full h-full"
-        >
-          {/* Segmented arcs forming a circle */}
-          {/* Yellow arc at top */}
-          <path
-            d="M 50 10 A 40 40 0 0 1 70 20"
-            stroke="#FCD34D"
-            strokeWidth="8"
-            fill="none"
-            strokeLinecap="round"
-          />
-          {/* Light blue/teal arc */}
-          <path
-            d="M 70 20 A 40 40 0 0 1 85 50"
-            stroke="#4FD1C7"
-            strokeWidth="8"
-            fill="none"
-            strokeLinecap="round"
-          />
-          {/* Dark blue arc */}
-          <path
-            d="M 85 50 A 40 40 0 0 1 70 80"
-            stroke="#2563EB"
-            strokeWidth="8"
-            fill="none"
-            strokeLinecap="round"
-          />
-          {/* Dark blue/grey arc at bottom */}
-          <path
-            d="M 70 80 A 40 40 0 0 1 30 80"
-            stroke="#475569"
-            strokeWidth="8"
-            fill="none"
-            strokeLinecap="round"
-          />
-          {/* Light blue arc on left */}
-          <path
-            d="M 30 80 A 40 40 0 0 1 15 50"
-            stroke="#60A5FA"
-            strokeWidth="8"
-            fill="none"
-            strokeLinecap="round"
-          />
-          {/* Completing the circle */}
-          <path
-            d="M 15 50 A 40 40 0 0 1 50 10"
-            stroke="#4FD1C7"
-            strokeWidth="8"
-            fill="none"
-            strokeLinecap="round"
-          />
-        </svg>
+       
         
-        {/* N and E letters stacked vertically */}
-        <div className="relative z-10 flex flex-col items-center justify-center">
-          <span className={`${currentSize.letters} font-serif font-bold ${variant === 'light' ? 'text-white' : 'text-slate-700'} leading-none`}>N</span>
-          <span className={`${currentSize.letters} font-serif font-bold ${variant === 'light' ? 'text-white' : 'text-slate-700'} leading-none -mt-1`}>E</span>
+        {/* Logo Image */}
+        <div className="relative z-10 flex items-center justify-center w-full h-full">
+          <img 
+            src="/nexuslogo-.png" 
+            alt="Nexus Energy" 
+            className="w-full h-full object-contain"
+          />
         </div>
       </div>
 

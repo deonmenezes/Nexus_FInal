@@ -467,15 +467,19 @@ export const Navbar = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className={cn(
-                  "lg:hidden duration-300 p-2 w-full justify-between flex items-center gap-2",
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-                    : "text-white hover:text-gray-200 hover:bg-white/10"
-                )}
+                className="lg:hidden duration-300 p-2 hover:bg-gray-100 relative"
                 aria-label="Open navigation menu"
               >
-                <h1 className=" font-bold text-xl">Nexus Energy</h1><Menu className="h-5 w-5" aria-hidden="true" /> 
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="menuGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="50%" stopColor="#06b6d4" />
+                      <stop offset="100%" stopColor="#3b82f6" />
+                    </linearGradient>
+                  </defs>
+                  <path stroke="url(#menuGradient)" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
