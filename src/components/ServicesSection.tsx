@@ -21,7 +21,7 @@ const services = [
     description:
       "Robust battery solutions for forklifts, stackers, and material handling equipment",
     icon: Bike,
-    image: Images.eMobility,
+    image: "/images/bt.jpg",
     features: [
       "Heavy-duty design for industrial applications",
       "Quick swap capability for continuous operations",
@@ -97,15 +97,9 @@ const ServicesSection: React.FC = () => {
                   customSize={true}
                   className="h-full bg-white border border-gray-100 shadow-sm p-4 md:p-5"
                 >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-sm">
-                      {index + 1}
-                    </div>
-                    <service.icon className="h-5 w-5 md:h-6 md:w-6 bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent" />
-                    <h3 className="text-base md:text-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
-                      {service.title}
-                    </h3>
-                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-3">
+                    {service.title}
+                  </h3>
 
                   <p className="text-gray-600 leading-relaxed mb-3 text-sm md:text-base">
                     {service.description}

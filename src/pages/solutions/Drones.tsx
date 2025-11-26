@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { Zap, Shield, Battery, Globe, Smartphone, Gauge, Clock, CheckCircle2 } from 'lucide-react';
+import { Zap, Shield, Battery, Globe, Smartphone, Gauge, Clock, CheckCircle2, Sprout } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 
 const Drones = () => {
@@ -340,6 +340,93 @@ const Drones = () => {
               <p className="text-lg text-gray-700 leading-relaxed mt-4 font-semibold">
                 At Nexus, we are proud to power that change.
               </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Drone Battery Solutions Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Drone Battery Solutions
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600">
+              High-performance battery solutions for agricultural and defence drones.
+            </p>
+          </motion.div>
+
+          {/* Agricultural Drones */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/images/agriculturaldrone.jpg" 
+                    alt="Agricultural Drones" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                    <Sprout className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Agricultural Drones
+                  </h3>
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Advanced battery solutions for agricultural drones, enabling efficient crop monitoring, spraying, and mapping.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Defence Drones */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-r from-slate-600 to-slate-700 rounded-xl flex items-center justify-center">
+                    <Shield className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Defence Drones
+                  </h3>
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Reliable and high-performance batteries for defence and surveillance drones, ensuring mission success.
+                </p>
+              </div>
+              <div>
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/images/defencedrone.jpeg" 
+                    alt="Defence Drones" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
