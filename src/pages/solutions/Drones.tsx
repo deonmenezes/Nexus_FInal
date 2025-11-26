@@ -272,7 +272,7 @@ const Drones = () => {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-center mb-8 pb-2">
               Smart Energy for Every Mission
             </h2>
             <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
@@ -326,7 +326,7 @@ const Drones = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-center mb-8 pb-2">
               Driving Self-Reliance in Critical Drone Subsystems
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">

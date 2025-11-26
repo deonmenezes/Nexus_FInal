@@ -78,11 +78,13 @@ const ServicesSection: React.FC = () => {
             >
               {/* Image Side */}
               <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-64 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                <div className={`relative w-full h-64 sm:h-72 md:h-80 lg:h-64 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden ${
+                  index === 1 || index === 2 ? "" : "flex items-center justify-center p-4"
+                }`}>
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${index === 1 || index === 2 ? "object-cover" : "object-contain"}`}
                     loading="lazy"
                   />
                 </div>

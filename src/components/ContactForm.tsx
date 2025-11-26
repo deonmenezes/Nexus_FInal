@@ -303,7 +303,7 @@ export const ContactForm = () => {
         </div>
         <div className="flex items-center gap-2">
           <input type="checkbox" id="agree" checked={agree} onChange={e => setAgree(e.target.checked)} />
-          <label htmlFor="agree" className="text-sm">I agree to comply with <a href="/privacy" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a></label>
+          <label htmlFor="agree" className="text-sm">I agree to comply with <a href="/privacy-policy" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a></label>
         </div>
         {error && <div className="text-red-600 text-sm mb-2">{error}</div>}
         <Button type="submit" disabled={isSubmitting} className="w-fit bg-[#001E5A] hover:bg-primary/90 text-white py-6 text-lg font-medium">
