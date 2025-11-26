@@ -200,8 +200,8 @@ const UIUXDesignService = () => {
         <div className="min-h-screen bg-background">
             {/* Navbar */}
             <Navbar 
-                title="UI/UX Design Services - Virelity.com"
-                description="Professional UI/UX design services that create intuitive, beautiful, and user-centered digital experiences for web and mobile applications."
+                title="Interface Design Systems - Nexus Energy"
+                description="Our design team crafts control interfaces, monitoring dashboards, and immersive product visualizations that make complex battery technology intuitive."
             />
             
             {/* Hero Section */}

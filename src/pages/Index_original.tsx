@@ -307,7 +307,7 @@ const testimonialsData = [
       img: "/suraj.png",
       name: "Suraj Jamani",
       role: "Producer",
-      text: "Partnering with Virelity has been a game-changer! Their strategy and creativity helped me shape my brand in a way that feels authentic and powerful.",
+      text: "Partnering with Nexus Energy has been a game-changer! Their strategy and creativity helped me shape my electrification story in a way that feels authentic and powerful.",
       rating: 5,
     },
     {
@@ -567,8 +567,7 @@ const Index = () => {
                         /> with our solutions
                       </p>
                       <p>
-                        Virelity.com delivers cutting-edge web solutions, mobile apps, and digital
-                        strategies that drive growth and innovation.
+                        Nexus Energy delivers indigenous battery technology, digital twins, and connected services that drive clean mobility and grid reliability.
                       </p>
                     </div>
                   </motion.div>
@@ -608,7 +607,7 @@ const Index = () => {
                       muted
                       playsInline
                       className="w-full h-full min-h-[320px] md:min-h-[420px] lg:min-h-[480px] xl:min-h-[520px] object-cover aspect-video"
-                      poster="/virelity_navbar.png"
+                      poster="/nexuslogo-.png"
                     >
                       Sorry, your browser does not support embedded videos.
                     </video>

@@ -200,8 +200,8 @@ const VideoEditingService = () => {
         <div className="min-h-screen bg-background relative overflow-hidden">
             {/* Navbar */}
             <Navbar 
-                title="Video Editing Services - Virelity.com"
-                description="Professional video editing services including corporate videos, promotional content, and cinematic productions with stunning visual effects."
+                title="Immersive Video Systems - Nexus Energy"
+                description="Nexus Energy produces immersive visual storytelling for product launches, factory walkthroughs, and investor demos that spotlight our indigenous energy technology."
             />
             
             {/* Hero Section */}
@@ -214,7 +214,7 @@ const VideoEditingService = () => {
                     loop
                     muted
                     playsInline
-                    poster="/virelity_navbar.png"
+                    poster="/nexuslogo-.png"
                 />
                 <div className="absolute inset-0 bg-grid-pattern opacity-5 z-10" />
                 <div className="container relative z-20 flex flex-col items-center justify-center h-full">

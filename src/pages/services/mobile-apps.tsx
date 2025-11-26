@@ -200,8 +200,8 @@ const MobileAppsService = () => {
         <div className="min-h-screen bg-background">
             {/* Navbar */}
             <Navbar 
-                title="Mobile App Development - Virelity.com"
-                description="Professional mobile app development services for iOS and Android. Create powerful, user-friendly mobile applications that drive business growth."
+                title="Field Mobility Apps - Nexus Energy"
+                description="Nexus Energy designs rugged companion apps for technicians, fleet operators, and enterprise partners to monitor packs, log diagnostics, and orchestrate service visits."
             />
             
             {/* Hero Section */}
@@ -214,7 +214,7 @@ const MobileAppsService = () => {
                     loop
                     muted
                     playsInline
-                    poster="/virelity_navbar.png"
+                    poster="/nexuslogo-.png"
                 />
                 <div className="absolute inset-0 bg-grid-pattern opacity-5 z-10" />
                 <div className="container relative z-20 flex flex-col items-center justify-center h-full">

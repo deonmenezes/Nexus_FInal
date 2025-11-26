@@ -224,8 +224,8 @@ const DigitalMarketingService = () => {
         <div className="min-h-screen bg-background relative overflow-hidden">
             {/* Navbar */}
             <Navbar 
-                title="Digital Marketing Services - Virelity.com"
-                description="Comprehensive digital marketing services including SEO, PPC, social media marketing, and content marketing to drive business growth."
+                title="Growth Activation - Nexus Energy"
+                description="Nexus Energy activates stakeholder engagement through investor communications, partner enablement campaigns, and technical storytelling around indigenous energy systems."
             />
             
             {/* Hero Section */}
@@ -238,7 +238,7 @@ const DigitalMarketingService = () => {
                     loop
                     muted
                     playsInline
-                    poster="/virelity_navbar.png"
+                    poster="/nexuslogo-.png"
                 />
                 <div className="absolute inset-0 bg-grid-pattern opacity-5 z-10" />
                 <div className="container relative z-20 flex flex-col items-center justify-center h-full">

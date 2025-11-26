@@ -200,8 +200,8 @@ const DesignServices = () => {
         <div className="min-h-screen bg-background">
             {/* Navbar */}
             <Navbar 
-                title="Design Services - Virelity.com"
-                description="Professional design services including brand identity, UI/UX design, print design, and creative solutions for your business."
+                title="Integrated Design Studio - Nexus Energy"
+                description="Nexus Energy's creative studio develops visual systems, factory signage, and live demo environments that communicate the power of our energy ecosystem."
             />
             
             {/* Hero Section */}

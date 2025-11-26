@@ -201,8 +201,8 @@ const WebDevelopmentService = () => {
         <div className="min-h-screen bg-background">
             {/* Navbar */}
             <Navbar 
-                title="Web Development Services - Virelity.com"
-                description="Professional web development services including responsive websites, web applications, and e-commerce solutions built with modern technologies."
+                title="Energy Platform Engineering - Nexus Energy"
+                description="We engineer operator dashboards, telemetry portals, and customer-facing applications that showcase Nexus battery systems and unlock real-time insights."
             />
             
             {/* Hero Section */}
@@ -215,7 +215,7 @@ const WebDevelopmentService = () => {
                     loop
                     muted
                     playsInline
-                    poster="/virelity_navbar.png"
+                    poster="/nexuslogo-.png"
                 />
                 <div className="absolute inset-0 bg-grid-pattern opacity-5 z-10" />
                 <div className="container relative z-20 flex flex-col items-center justify-center h-full">

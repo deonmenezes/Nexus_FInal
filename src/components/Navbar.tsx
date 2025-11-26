@@ -9,6 +9,8 @@ import { Helmet } from "react-helmet-async";
 import { div } from "three/src/nodes/TSL.js";
 import { Logo } from "@/components/Logo";
 
+const SITE_URL = "https://nexusenergy.com";
+
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -122,7 +124,7 @@ export const Navbar = ({
     let pageTitle = title;
     let pageDescription = description;
     let pageKeywords =
-      "AI Agents, web development, digital solutions, business transformation";
+      "battery storage, indigenous lithium packs, BMS, energy storage systems, EV batteries, rail batteries";
 
     switch (path) {
       case "/solutions":
@@ -173,9 +175,9 @@ export const Navbar = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Nexus Energy",
-    url: "https://nexusenergy.com",
-    logo: "https://nexusenergy.com/nexuslogo.png",
-    description: "Leading provider of advanced battery storage solutions",
+    url: SITE_URL,
+    logo: `${SITE_URL}/nexuslogo-.png`,
+    description: "Indigenous lithium battery systems, AI-powered BMS, and immersion-cooled packs for mobility, drones, railways, and energy storage.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Mumbai",
@@ -206,33 +208,33 @@ export const Navbar = ({
         {/* Canonical URL */}
         <link
           rel="canonical"
-          href={`https://nexusenergy.com${location.pathname}`}
+          href={`${SITE_URL}${location.pathname}`}
         />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={`https://nexusenergy.com${location.pathname}`}
+          content={`${SITE_URL}${location.pathname}`}
         />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta
           property="og:image"
-          content="https://nexusenergy.com/nexuslogo-.png"
+          content={`${SITE_URL}/nexuslogo-.png`}
         />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:url"
-          content={`https://nexusenergy.com${location.pathname}`}
+          content={`${SITE_URL}${location.pathname}`}
         />
         <meta property="twitter:title" content={pageTitle} />
         <meta property="twitter:description" content={pageDescription} />
         <meta
           property="twitter:image"
-          content="https://nexusenergy.com/nexuslogo-.png"
+          content={`${SITE_URL}/nexuslogo-.png`}
         />
 
         {/* Structured Data */}
@@ -243,7 +245,7 @@ export const Navbar = ({
         {/* Additional SEO Tags */}
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
-        <meta name="author" content="Virelity.com" />
+        <meta name="author" content="Nexus Energy" />
         <meta name="revisit-after" content="7 days" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
