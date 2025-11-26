@@ -275,22 +275,15 @@ export const Navbar = ({
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-blue-600 relative py-2 group",
+                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
                   location.pathname === item.path
-                    ? scrolled
-                      ? "text-blue-600 font-semibold"
-                      : "text-blue-400 font-semibold"
-                    : scrolled
-                      ? "text-gray-900 hover:text-blue-600"
-                      : location.pathname === '/'
-                        ? "text-gray-100 hover:text-blue-300"
-                        : "text-gray-900 hover:text-blue-600"
+                    ? "from-green-600 to-blue-700 shadow-lg"
+                    : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
                 )}
                 role="menuitem"
                 aria-current={location.pathname === item.path ? "page" : undefined}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
 
@@ -308,16 +301,10 @@ export const Navbar = ({
             >
               <button
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-blue-600 relative py-2 flex items-center gap-1",
+                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full flex items-center gap-1 bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
                   location.pathname.startsWith('/solutions')
-                    ? scrolled
-                      ? "text-blue-600 font-semibold"
-                      : "text-blue-400 font-semibold"
-                    : scrolled
-                      ? "text-gray-900 hover:text-blue-600"
-                      : location.pathname === '/'
-                        ? "text-gray-100 hover:text-blue-300"
-                        : "text-gray-900 hover:text-blue-600"
+                    ? "from-green-600 to-blue-700 shadow-lg"
+                    : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
                 )}
               >
                 Solutions
@@ -327,7 +314,6 @@ export const Navbar = ({
                     isDropdownOpen ? "rotate-180" : ""
                   )}
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
 
               {/* Dropdown Menu - CATL Style */}
@@ -445,34 +431,22 @@ export const Navbar = ({
             <Link
               to="/technology"
               className={cn(
-                "text-sm font-medium transition-all duration-300 hover:text-blue-600 relative py-2 group",
+                "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
                 location.pathname === "/technology"
-                  ? scrolled
-                    ? "text-blue-600 font-semibold"
-                    : "text-blue-400 font-semibold"
-                  : scrolled
-                    ? "text-gray-900 hover:text-blue-600"
-                    : location.pathname === '/'
-                      ? "text-gray-100 hover:text-blue-300"
-                      : "text-gray-900 hover:text-blue-600"
+                  ? "from-green-600 to-blue-700 shadow-lg"
+                  : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
               )}
               role="menuitem"
               aria-current={location.pathname === "/technology" ? "page" : undefined}
             >
               Technology
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
             <Button
               asChild
-              className={cn(
-                "transition-all duration-300 px-6 py-2 text-sm font-medium rounded-full",
-                scrolled
-                  ? "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white"
-                  : "bg-gradient-to-r from-green-500/90 to-emerald-600/90 hover:from-green-600 hover:to-emerald-700 text-white backdrop-blur-sm"
-              )}
+              className="transition-all duration-300 px-6 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white shadow-md hover:shadow-lg"
               aria-label="Get in touch with us"
             >
               <Link to="/contact">Get Contact</Link>
@@ -515,10 +489,10 @@ export const Navbar = ({
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                       className={cn(
-                        "text-base py-3 px-4 rounded-md transition-colors",
+                        "text-base py-3 px-4 rounded-full transition-all duration-300 bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
                         location.pathname === item.path
-                          ? "bg-blue-50 text-blue-600 font-medium"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          ? "from-green-600 to-blue-700 font-medium shadow-lg"
+                          : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
                       )}
                       role="menuitem"
                       aria-current={
@@ -534,10 +508,10 @@ export const Navbar = ({
                     <button
                       onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
                       className={cn(
-                        "w-full text-left text-base py-3 px-4 rounded-md transition-colors flex items-center justify-between",
+                        "w-full text-left text-base py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-between bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
                         location.pathname.startsWith('/solutions')
-                          ? "bg-blue-50 text-blue-600 font-medium"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          ? "from-green-600 to-blue-700 font-medium shadow-lg"
+                          : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
                       )}
                     >
                       <span>Solutions</span>
@@ -640,10 +614,10 @@ export const Navbar = ({
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                     className={cn(
-                      "text-base py-3 px-4 rounded-md transition-colors",
+                      "text-base py-3 px-4 rounded-full transition-all duration-300 bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
                       location.pathname === "/technology"
-                        ? "bg-blue-50 text-blue-600 font-medium"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                        ? "from-green-600 to-blue-700 font-medium shadow-lg"
+                        : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
                     )}
                     role="menuitem"
                     aria-current={
@@ -656,7 +630,7 @@ export const Navbar = ({
                 <div className="mt-auto pb-6">
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 text-sm font-medium rounded-full transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
                     aria-label="Get in touch with us"
                   >
                     <Link 
