@@ -15,6 +15,28 @@ const Drones = () => {
     }
   }, []);
 
+  const IndianFlag = () => (
+    <svg
+      className="inline-block w-6 h-4 md:w-8 md:h-6 mx-1 -mt-1"
+      viewBox="0 0 9 6"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="9" height="2" fill="#FF9933" />
+      <rect y="2" width="9" height="2" fill="#FFFFFF" />
+      <rect y="4" width="9" height="2" fill="#138808" />
+      <circle cx="4.5" cy="3" r="0.8" fill="#000080" />
+      <circle cx="4.5" cy="3" r="0.7" fill="transparent" stroke="#000080" strokeWidth="0.15" />
+      {[...Array(24)].map((_, i) => {
+        const angle = (i * 15 - 90) * (Math.PI / 180);
+        const x1 = 4.5 + Math.cos(angle) * 0.35;
+        const y1 = 3 + Math.sin(angle) * 0.35;
+        const x2 = 4.5 + Math.cos(angle) * 0.7;
+        const y2 = 3 + Math.sin(angle) * 0.7;
+        return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#000080" strokeWidth="0.05" />;
+      })}
+    </svg>
+  );
+
   const features = [
     {
       icon: Battery,
@@ -40,8 +62,16 @@ const Drones = () => {
         description="Powering Bharat's Drone Future with Nexus Indigenous Energy Solutions"
       />
       <PageHero
-        title="Powering Bharat's Drone Future with Nexus Indigenous Energy Solutions"
-        subtitle="At Nexus, we are committed to building the backbone of Bharat's drone revolution through indigenously developed lithium battery solutions."
+        title={
+          <span>
+            Powering <IndianFlag /> Bharat's Drone Future with Nexus Indigenous Energy Solutions
+          </span>
+        }
+        subtitle={
+          <span>
+            At Nexus, we are committed to building the backbone of <IndianFlag /> Bharat's drone revolution through indigenously developed lithium battery solutions.
+          </span>
+        }
         breadcrumbs={[
           { label: 'Home', path: '/' },
           { label: 'Solutions', path: '/solutions' },
