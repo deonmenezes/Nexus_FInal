@@ -207,10 +207,10 @@ export const ContactForm = () => {
         {TABS.map((tab, idx) => (
           <button
             key={tab.value}
-            className={`flex-1 h-[80px] text-lg font-semibold transition-all duration-200 focus:outline-none border-none ${
+            className={`flex-1 h-[80px] text-lg font-semibold transition-all duration-300 focus:outline-none border-none ${
               activeTab === tab.value
-                ? 'bg-[#0028AA] text-white border-b-4 border-[#0028AA]'
-                : 'bg-[#001e5a] text-white/80 border-b-4 border-transparent hover:bg-[#0028AA] hover:text-white'
+                ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg'
+                : 'bg-gradient-to-r from-green-400/70 to-blue-500/70 text-white/90 hover:from-green-500 hover:to-blue-600 hover:text-white hover:shadow-md'
             } ${idx === 0 ? 'rounded-tl-xl' : ''} ${idx === TABS.length - 1 ? 'rounded-tr-xl' : ''}`}
             onClick={() => setActiveTab(tab.value)}
             type="button"

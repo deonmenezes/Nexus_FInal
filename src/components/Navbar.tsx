@@ -12,7 +12,6 @@ import { Logo } from "@/components/Logo";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
 ];
 
 const solutionsStructure = [
@@ -275,10 +274,13 @@ export const Navbar = ({
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
+                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group",
+                  scrolled || location.pathname !== '/'
+                    ? "text-gray-700 hover:text-blue-600"
+                    : "text-white hover:text-blue-200",
                   location.pathname === item.path
-                    ? "from-green-600 to-blue-700 shadow-lg"
-                    : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
+                    ? "font-semibold"
+                    : ""
                 )}
                 role="menuitem"
                 aria-current={location.pathname === item.path ? "page" : undefined}
@@ -301,10 +303,13 @@ export const Navbar = ({
             >
               <button
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full flex items-center gap-1 bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
+                  "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full flex items-center gap-1",
+                  scrolled || location.pathname !== '/'
+                    ? "text-gray-700 hover:text-blue-600"
+                    : "text-white hover:text-blue-200",
                   location.pathname.startsWith('/solutions')
-                    ? "from-green-600 to-blue-700 shadow-lg"
-                    : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
+                    ? "font-semibold"
+                    : ""
                 )}
               >
                 Solutions
@@ -431,10 +436,13 @@ export const Navbar = ({
             <Link
               to="/technology"
               className={cn(
-                "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
+                "text-sm font-medium transition-all duration-300 relative py-2 px-4 rounded-full group",
+                scrolled || location.pathname !== '/'
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white hover:text-blue-200",
                 location.pathname === "/technology"
-                  ? "from-green-600 to-blue-700 shadow-lg"
-                  : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
+                  ? "font-semibold"
+                  : ""
               )}
               role="menuitem"
               aria-current={location.pathname === "/technology" ? "page" : undefined}
@@ -489,10 +497,10 @@ export const Navbar = ({
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                       className={cn(
-                        "text-base py-3 px-4 rounded-full transition-all duration-300 bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
+                        "text-base py-3 px-4 rounded-full transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-gray-50",
                         location.pathname === item.path
-                          ? "from-green-600 to-blue-700 font-medium shadow-lg"
-                          : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
+                          ? "font-semibold text-blue-600 bg-blue-50"
+                          : ""
                       )}
                       role="menuitem"
                       aria-current={
@@ -508,10 +516,10 @@ export const Navbar = ({
                     <button
                       onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
                       className={cn(
-                        "w-full text-left text-base py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-between bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
+                        "w-full text-left text-base py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-between text-gray-700 hover:text-blue-600 hover:bg-gray-50",
                         location.pathname.startsWith('/solutions')
-                          ? "from-green-600 to-blue-700 font-medium shadow-lg"
-                          : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
+                          ? "font-semibold text-blue-600 bg-blue-50"
+                          : ""
                       )}
                     >
                       <span>Solutions</span>
@@ -614,10 +622,10 @@ export const Navbar = ({
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                     className={cn(
-                      "text-base py-3 px-4 rounded-full transition-all duration-300 bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md",
+                      "text-base py-3 px-4 rounded-full transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-gray-50",
                       location.pathname === "/technology"
-                        ? "from-green-600 to-blue-700 font-medium shadow-lg"
-                        : "hover:from-green-600 hover:to-blue-700 hover:shadow-lg"
+                        ? "font-semibold text-blue-600 bg-blue-50"
+                        : ""
                     )}
                     role="menuitem"
                     aria-current={
