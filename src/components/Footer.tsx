@@ -31,7 +31,7 @@ export const Footer = () => {
               {[
                 { name: "Home", url: "/", icon: Home },
                 { name: "About Us", url: "/about", icon: Info },
-                { name: "Services", url: "/services", icon: Briefcase },
+                // { name: "Services", url: "/services", icon: Briefcase },
                 { name: "Customers", url: "/customers", icon: User },
                 { name: "Contact", url: "/contact", icon: Mail },
               ].map((link) => (
