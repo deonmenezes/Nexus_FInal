@@ -105,10 +105,12 @@ export const Footer = () => {
                   className="inline-flex items-center gap-2 group"
                   aria-label="Visit our LinkedIn page"
                 >
-                  <div className="flex items-center justify-center w-8 h-8 bg-gray-600 group-hover:bg-green-600 transition-colors duration-300 rounded-sm">
+                  <div className="flex items-center justify-center w-8 h-8 bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 rounded-sm">
                     <Linkedin className="w-4 h-4 text-white fill-white" strokeWidth={0} fill="currentColor" />
                   </div>
-                  <span className="text-gray-700 group-hover:text-green-600 transition-colors duration-300 text-sm">Linked in</span>
+                  <span className="text-gray-700 group-hover:text-blue-700 transition-colors duration-300 text-sm">
+                    LinkedIn
+                  </span>
                 </a>
               </div>
             </div>

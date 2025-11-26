@@ -175,7 +175,7 @@ export const Navbar = ({
     "@type": "Organization",
     name: "Nexus Energy",
     url: SITE_URL,
-    logo: `${SITE_URL}/nexuslogo-.png`,
+    logo: `${SITE_URL}/images/logo footer.png`,
     description: "Indigenous lithium battery systems, AI-powered BMS, and immersion-cooled packs for mobility, drones, railways, and energy storage.",
     address: {
       "@type": "PostalAddress",
@@ -220,7 +220,7 @@ export const Navbar = ({
         <meta property="og:description" content={pageDescription} />
         <meta
           property="og:image"
-          content={`${SITE_URL}/nexuslogo-.png`}
+          content={`${SITE_URL}/images/logo footer.png`}
         />
 
         {/* Twitter */}
@@ -233,7 +233,7 @@ export const Navbar = ({
         <meta property="twitter:description" content={pageDescription} />
         <meta
           property="twitter:image"
-          content={`${SITE_URL}/nexuslogo-.png`}
+          content={`${SITE_URL}/images/logo footer.png`}
         />
 
         {/* Structured Data */}

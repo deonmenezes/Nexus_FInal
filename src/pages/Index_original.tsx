@@ -607,7 +607,7 @@ const Index = () => {
                       muted
                       playsInline
                       className="w-full h-full min-h-[320px] md:min-h-[420px] lg:min-h-[480px] xl:min-h-[520px] object-cover aspect-video"
-                      poster="/nexuslogo-.png"
+                      poster="/images/logo footer.png"
                     >
                       Sorry, your browser does not support embedded videos.
                     </video>

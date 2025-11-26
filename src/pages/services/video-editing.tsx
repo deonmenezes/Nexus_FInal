@@ -214,7 +214,7 @@ const VideoEditingService = () => {
                     loop
                     muted
                     playsInline
-                    poster="/nexuslogo-.png"
+                    poster="/images/logo footer.png"
                 />
                 <div className="absolute inset-0 bg-grid-pattern opacity-5 z-10" />
                 <div className="container relative z-20 flex flex-col items-center justify-center h-full">

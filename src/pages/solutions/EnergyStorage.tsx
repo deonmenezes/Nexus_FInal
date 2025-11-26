@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ChevronRight, Server } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
+import { useLocation } from 'react-router-dom';
 
 const subcategories = [
   {
@@ -19,7 +20,7 @@ const subcategories = [
     image: '/images/s9.png',
   },
   {
-    id: 'ups',
+    id: 'consumption',
     title: 'Energy Storage on Power Consumption',
   description: 'Nexus Energy’s energy storage systems provide users with a  peak-valley electricity price arbitrage mode and stable power quality management. Nexus Energy’s electrochemical energy storage products have been successfully applied in large-scale industrial, commercial and residential areas, and been expanded to emerging scenarios such as base stations, UPS backup power, off-grid and island/isolate systems, intelligent charging stations for optical storage charging and testing, etc. Such applications help regions that have a lack of power grids to have access to electricity, reduce electricity costs, ensure a  stable power network, and achieve maximum social and economic benefits by using renewable energy to its greatest extent.',
     image: '/images/s10.png',
@@ -28,6 +29,9 @@ const subcategories = [
 ];
 
 const EnergyStorage = () => {
+  const location = useLocation();
+
+  // Scroll to top on initial mount
   useEffect(() => {
     const lenis = (window as any).lenis;
     if (lenis && typeof lenis.scrollTo === 'function') {
@@ -36,6 +40,17 @@ const EnergyStorage = () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }
   }, []);
+
+  // If there's a hash in the URL (e.g. #bess, #ups), scroll to that section
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location.hash]);
 
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
