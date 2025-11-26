@@ -290,7 +290,7 @@ const Drones = () => {
             className="max-w-4xl mx-auto mb-12"
           >
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
-              Designed and manufactured in Bharat, our advanced battery systems are engineered for the unique demands of Bhartiya environments and mission requirements.
+              Designed and manufactured in <IndianFlag /> Bharat, our advanced battery systems are engineered for the unique demands of <IndianFlag /> Bhartiya environments and mission requirements.
             </p>
           </motion.div>
 
