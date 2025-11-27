@@ -403,12 +403,21 @@ const Drones = () => {
           >
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="/images/drone battery.png" 
-                    alt="Agricultural drone battery pack" 
-                    className="w-full h-auto object-cover"
-                  />
+                <div className="grid gap-6">
+                  <div className="rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/images/drone battery.png" 
+                      alt="Agricultural drone battery pack" 
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/images/agriculturaldrone.jpg" 
+                      alt="Agricultural drone in the field" 
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="order-1 lg:order-2">
