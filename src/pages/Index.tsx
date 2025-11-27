@@ -1160,10 +1160,10 @@ const Index = () => {
   // Simple 2-image slider state
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Two images: b1.png and the train image
+  // Two hero images sourced from latest railway deployments
   const sliderImages = [
-    "/images/b1.png",
-    "/images/fa53a6b5-e5c1-4fe6-beb7-85ee1b403e2d.jpg"
+    "/images/trainhome.png",
+    "/images/Vande_bharat-battery.png"
   ];
 
   // Auto-play slider with animation
