@@ -26,7 +26,6 @@ const solutionsStructure = [
       { name: "Heavy-duty Transport", path: "/solutions/commercial#heavy-duty" },
       { name: "Urban Street Cleaning", path: "/solutions/commercial#street-cleaning" },
       { name: "Construction", path: "/solutions/commercial#construction-machinery" },
-      { name: "Two-wheeled Vehicle", path: "/solutions/commercial#two-wheeled" },
       { name: "Special Vehicle", path: "/solutions/commercial#special-vehicle" },
     ]
   },
