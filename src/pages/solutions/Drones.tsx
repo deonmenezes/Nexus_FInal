@@ -405,8 +405,8 @@ const Drones = () => {
               <div className="order-2 lg:order-1">
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/images/agriculturaldrone.jpg" 
-                    alt="Agricultural Drones" 
+                    src="/images/drone battery.png" 
+                    alt="Agricultural drone battery pack" 
                     className="w-full h-auto object-cover"
                   />
                 </div>
