@@ -19,10 +19,12 @@ import {
   Plane,
   ChevronRight
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { PageHero } from '@/components/PageHero';
 
 const Commercial = () => {
+  const location = useLocation();
+
   // Scroll to top on mount
   useEffect(() => {
     const lenis = (window as any).lenis;
@@ -32,6 +34,26 @@ const Commercial = () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }
   }, []);
+
+  // Scroll to section if hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          const offset = 100;
+          const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   const advantages = [
     {
@@ -97,14 +119,14 @@ const Commercial = () => {
       image: "/images/s5.png",
       link: "/solutions/commercial/construction-machinery"
     },
-    {
+    /*{
       icon: Bike,
       title: "Two-wheeled Vehicle Solutions",
       description: "Nexus Energy offers green, intelligent and safe battery solutions for two-wheeled vehicles which can be applied to multiple scenarios such as commuting, food delivery, express delivery, etc. The rechargeable and replaceable batteries make your travel experience easy and seamless.",
       image: "/images/s6.png",
       link: "/solutions/commercial/two-wheeled"
     },
-
+    */
     {
       icon: Plane,
       title: "Special Vehicle Solutions",
