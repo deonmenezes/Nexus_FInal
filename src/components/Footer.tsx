@@ -82,16 +82,8 @@ export const Footer = () => {
                 <p className="text-gray-900 text-sm font-semibold mb-2">Plant - I</p>
                 <p className="text-gray-700 text-sm">
                   E-5,231 Bhumi world Industrial park,<br />
-                  Kalyan - Bhiwandi Rd, Naka, Bhiwandi,<br />
+                  Kalyan - Bhiwandi Naka, Bhiwandi,<br />
                   Maharashtra 421302
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-900 text-sm font-semibold mb-2">Plant - II</p>
-                <p className="text-gray-700 text-sm">
-                  Plot No. 69, Ladinaka, MIDC Industrial Area,<br />
-                  Chikhloli, Ambernath,<br />
-                  Maharashtra 421505
                 </p>
               </div>
               <div className="mt-4">
