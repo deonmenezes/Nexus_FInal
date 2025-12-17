@@ -31,7 +31,7 @@ export const Logo: React.FC<LogoProps> = ({
         {/* Logo Image */}
         <div className="relative z-10 flex items-center justify-center w-full h-full">
           <img 
-            src="/nexuslogo-.png" 
+            src="/images/logo footer.png" 
             alt="Nexus Energy" 
             className="w-full h-full object-contain"
           />

@@ -13,32 +13,32 @@ const services = [
     title: 'Energy Storage on Power Generation',
     description: "Nexus Energy's energy storage systems provide energy storage and output management in power generation. The electrochemical technology and renewable energy power generation technology form a joint system. Through the high-level consistency of cells and the powerful computing of BMS, Nexus Energy enables the power generation to restore a stable power grid, optimize the power output curve, reduce solar and wind curtailment, provide system inertia and the functions of frequency and peak modulation, increase the proportion of renewable energy in total power generation, and optimize the energy structure.",
     image: '/images/s8.png',
-    link: '/solutions'
+    link: '/solutions/energystorage#bess'
   },
   {
     id: 'ups',
     title: 'Energy Storage on Power Transmission and Distribution',
     description: "Nexus Energy's energy storage systems provide smart load management for power transmission and distribution, and modulate frequency and peak in time according to power grid loads. The Nexus Energy electrochemical energy storage system has the functions of capacity increasing and  expansion, backup power supply, etc. It can adopt more renewable energy in power transmission and distribution in order to ensure the safe, stable, efficient and low-cost operation of the power grid.",
     image: '/images/s9.png',
-    link: '/solutions'
+    link: '/solutions/energystorage#ups'
   },
   {
-    id: 'ups',
+    id: 'consumption',
     title: 'Energy Storage on Power Consumption',
     description: "Nexus Energy's energy storage systems provide users with a  peak-valley electricity price arbitrage mode and stable power quality management. Nexus Energy's electrochemical energy storage products have been successfully applied in large-scale industrial, commercial and residential areas, and been expanded to emerging scenarios such as base stations, UPS backup power, off-grid and island/isolate systems, intelligent charging stations for optical storage charging and testing, etc. Such applications help regions that have a lack of power grids to have access to electricity, reduce electricity costs, ensure a  stable power network, and achieve maximum social and economic benefits by using renewable energy to its greatest extent.",
     image: '/images/s10.png',
-    link: '/solutions'
+    link: '/solutions/energystorage#consumption'
   }, {
     title: "Road Passenger Transport Solutions",
     description: "Focusing on the high-frequency and high-stability requirements of road passenger transport, Nexus Energy provides multi-scenario solutions that are safe, reliable, durable, and widely used in various urban public transport scenarios, passenger line, tourism passenger transport, commuter, etc.",
     image: "/images/s1.png",
-    link: "/solutions"
+    link: "/solutions/commercial#road-passenger-transport"
   },
   {
     title: "Urban Delivery Solutions",
     description: "Nexus Energy's traction batteries are suitable for light trucks, mini buses, and minivans, and are widely used in express delivery, supermarket delivery, fresh food delivery and other scenarios. Nexus Energy provides customers with safe, reliable and comprehensive battery solutions.",
     image: "/images/s2.png",
-    link: "/solutions"
+    link: "/solutions/commercial#street-cleaning"
   },
   {
     title: "Heavy-duty Transport Solutions",
@@ -156,7 +156,7 @@ export const ServicesContent = () => {
             <span className="text-blue-700 font-semibold text-sm tracking-wide uppercase">Technology Applications</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
               Powering Innovation
             </span>
             <br />

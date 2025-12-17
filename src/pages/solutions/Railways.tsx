@@ -63,40 +63,60 @@ const Railways = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl space-y-20">
           {subcategories.map((sub, idx) => (
-            <div
-              key={sub.id}
-              id={sub.id}
-              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
-            >
-              <div className="w-full lg:w-1/2">
-                <div className="relative overflow-hidden rounded-2xl  group">
+            <div key={sub.id} id={sub.id}>
+              <div
+                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
+              >
+                <div className="w-full lg:w-1/2">
+                  <div className="relative overflow-hidden rounded-2xl  group">
+                    <img 
+                      src={sub.image} 
+                      alt={sub.title}
+                      className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="w-full lg:w-1/2">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <TramFront className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{sub.title}</h3>
+                  </div>
+                  {sub.descriptionBullets ? (
+                    <>
+                      <p className="text-gray-600 leading-relaxed text-lg mb-2">{sub.descriptionIntro}</p>
+                      <ul className="list-disc pl-6 text-gray-600 text-lg space-y-1">
+                        {sub.descriptionBullets.map((point, i) => (
+                          <li key={i}>{point}</li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <p className="text-gray-600 leading-relaxed text-lg">{sub.description}</p>
+                  )}
+                </div>
+              </div>
+              {idx === 0 && (
+                <div className="mt-8 w-full lg:w-1/2">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4">Nexus Battery powering Vande Bharat</h4>
                   <img 
-                    src={sub.image} 
-                    alt={sub.title}
-                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                    src="/images/Vande_bharat-battery.png" 
+                    alt="Vande Bharat Battery System"
+                    className="w-full h-80 object-cover rounded-lg shadow-md"
                   />
                 </div>
-              </div>
-              <div className="w-full lg:w-1/2">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <TramFront className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{sub.title}</h3>
+              )}
+              {idx === 1 && (
+                <div className="mt-8 w-full lg:w-1/2 lg:ml-auto">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4">Nexus Shunt Locomotive Battery</h4>
+                  <img 
+                    src="/images/shunt.png" 
+                    alt="Shunt Locomotive Battery System"
+                    className="w-full h-80 object-cover rounded-lg shadow-md"
+                  />
                 </div>
-                {sub.descriptionBullets ? (
-                  <>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-2">{sub.descriptionIntro}</p>
-                    <ul className="list-disc pl-6 text-gray-600 text-lg space-y-1">
-                      {sub.descriptionBullets.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <p className="text-gray-600 leading-relaxed text-lg">{sub.description}</p>
-                )}
-              </div>
+              )}
             </div>
           ))}
         </div>

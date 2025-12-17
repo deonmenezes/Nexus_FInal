@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { PageHero } from '@/components/PageHero';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   ChevronRight, 
   Bus,
@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 
 const Solutions = () => {
+  const location = useLocation();
+
   // Scroll to top on mount
   useEffect(() => {
     const lenis = (window as any).lenis;
@@ -30,20 +32,43 @@ const Solutions = () => {
     }
   }, []);
 
+  // Scroll to section if hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          const offset = 100;
+          const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   const commercialSolutions = [
     {
+      id: "commercial-evs",
       icon: Bus,
       title: "Commercial EVs – Electric Bus",
   description: "Focusing on the high-frequency and high-stability requirements of road passenger transport, Nexus Energy provides multi-scenario solutions that are safe, reliable, durable, and widely used in various urban public transport scenarios, passenger line, tourism passenger transport, commuter, etc.",
       image: "https://www.catl.com/en/uploads/1/image/public/202101/20210113152613_a5bukbvsgp.png"
     },
     {
+      id: "railways",
       icon: TramFront,
       title: "Railways – Vande Bharat ",
   description: "Nexus Energy's traction batteries are suitable for light trucks, mini buses, and minivans, and are widely used in express delivery, supermarket delivery, fresh food delivery and other scenarios. Nexus Energy provides customers with safe, reliable and comprehensive battery solutions.",
       image: "https://t4.ftcdn.net/jpg/05/18/35/41/360_F_518354199_t3WVv6zkDC9nuGi9v2T9kMPUuG41G5nQ.jpg"
     },
     {
+      id: "lcvs",
       icon: Truck,
       title: "LCVs (Light Commercial Electric Vehicles) ",
   description: "Nexus Energy provides strong and clean power to heavy-duty vehicles for meeting the working conditions of mining areas, ports, short-haul transportation in urban areas and construction sites, to satisfy the requirements of industrialization and transport electrification.",
@@ -110,6 +135,7 @@ const Solutions = () => {
             {commercialSolutions.map((solution, index) => (
               <motion.div
                 key={solution.title}
+                id={solution.id}
                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}

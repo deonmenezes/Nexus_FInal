@@ -1,10 +1,20 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { PageHero } from '../components/PageHero';
 
 const Technology = memo(() => {
+  // Scroll to top on mount
+  useEffect(() => {
+    const lenis = (window as any).lenis;
+    if (lenis && typeof lenis.scrollTo === 'function') {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, []);
+
   return (
     <motion.div 
       className="min-h-screen bg-white overflow-x-hidden"
@@ -15,7 +25,7 @@ const Technology = memo(() => {
       <main >
         {/* Hero Section */}
         <PageHero
-          title="Advanced Thermal Management"
+          title="Active Thermal Management"
           subtitle="Immersion cooling technology represents the next generation of battery safety, performance, and reliability engineering."
           breadcrumbs={[
             { label: 'Home', path: '/' },

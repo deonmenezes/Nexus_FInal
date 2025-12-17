@@ -203,8 +203,8 @@ const VRARDevelopmentService = () => {
         <div className="min-h-screen bg-background">
             {/* Navbar */}
             <Navbar
-                title="VR/AR Development Services - Virelity.com"
-                description="Professional VR and AR development services. Create immersive virtual and augmented reality experiences that transform user engagement and business operations."
+                title="Immersive Engineering - Nexus Energy"
+                description="We build VR and AR simulations that demonstrate Nexus Energy's battery innovations, factory workflows, and safety training in fully interactive environments."
             />
 
             {/* Hero Section */}
