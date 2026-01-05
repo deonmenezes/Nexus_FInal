@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 import { div } from "three/src/nodes/TSL.js";
 import { Logo } from "@/components/Logo";
 
-const SITE_URL = "https://nexusenergy.com";
+const SITE_URL = "https://nexusenergy.in";
 
 const navItems = [
   { name: "Home", path: "/" },

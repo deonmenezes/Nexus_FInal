@@ -6,7 +6,7 @@ type BreadcrumbProps = {
   basePath?: string;
 }
 
-export const SEOBreadcrumbs = ({ title, basePath = "https://nexusenergy.com" }: BreadcrumbProps) => {
+export const SEOBreadcrumbs = ({ title, basePath = "https://nexusenergy.in" }: BreadcrumbProps) => {
   const location = useLocation();
   const path = location.pathname;
   
