@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "+916280602341"; // From Contact section
+  const phoneNumber = "+919650661636"; // From Contact section
   const message = "Hello! I'm interested in learning more about Nexus Energy Solutions' energy storage systems. Could you please provide more information about your services?";
   
   const handleWhatsAppClick = () => {

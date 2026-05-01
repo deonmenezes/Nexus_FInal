@@ -56,12 +56,6 @@ const Contact = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Call Us Directly</h3>
               <div className="space-y-2">
                 <a
-                  href="tel:+916280602341"
-                  className="block text-gray-600 hover:text-green-600 transition-colors duration-300 font-medium"
-                >
-                  +91 6280 602 341
-                </a>
-                <a
                   href="tel:+919650661636"
                   className="block text-gray-600 hover:text-green-600 transition-colors duration-300 font-medium"
                 >
@@ -116,7 +110,7 @@ const Contact = () => {
               </div>
             </div>
             <a
-              href="https://wa.me/916280602341"
+              href="https://wa.me/919650661636"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition-all duration-300 hover:scale-105 shadow-lg"

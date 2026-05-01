@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
 
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact Information</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              For any queries or requests, users can contact the company's Data Protection Officer at <a href="mailto:info@nexusenergy.in" className="text-green-600 hover:text-green-700">info@nexusenergy.in</a> or <a href="tel:+916280602341" className="text-green-600 hover:text-green-700">+91 62806 02341</a>.
+              For any queries or requests, users can contact the company's Data Protection Officer at <a href="mailto:info@nexusenergy.in" className="text-green-600 hover:text-green-700">info@nexusenergy.in</a> or <a href="tel:+919650661636" className="text-green-600 hover:text-green-700">+91 9650661636</a>.
             </p>
           </div>
         </div>

@@ -86,10 +86,25 @@ export const Footer = () => {
                   Maharashtra 421302
                 </p>
               </div>
+              <div>
+                <p className="text-gray-900 text-sm font-semibold mb-2">Plant - II</p>
+                <p className="text-gray-700 text-sm">
+                  Plot No. 6, Gali No. 1,<br />
+                  Near Police Chowki, Sikri,<br />
+                  Ballabgarh, Faridabad, HR 121004
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-900 text-sm font-semibold mb-2">Office - II</p>
+                <p className="text-gray-700 text-sm">
+                  517, 25th Floor, Solus,<br />
+                  Hiranandani Estate,<br />
+                  Thane - 400615
+                </p>
+              </div>
               <div className="mt-4">
                 <p className="text-gray-700 text-sm mb-1">Email : <a href="mailto:sales@nexusenergy.in" className="text-gray-700 hover:text-green-600 transition-colors duration-300">sales@nexusenergy.in</a></p>
-                <p className="text-gray-700 text-sm mb-1">Contact : <a href="tel:+916280602341" className="text-gray-700 hover:text-green-600 transition-colors duration-300">+91 6280 602 341</a></p>
-                <a href="tel:+919650661636" className="text-gray-700 hover:text-green-600 transition-colors duration-300 text-sm block mb-3">+91 9650661636</a>
+                <p className="text-gray-700 text-sm mb-1">Contact : <a href="tel:+919650661636" className="text-gray-700 hover:text-green-600 transition-colors duration-300">+91 9650661636</a></p>
                 <a 
                   href="https://www.linkedin.com/company/nexus-energy-solutions-pvt-ltd/" 
                   target="_blank" 
